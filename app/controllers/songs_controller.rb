@@ -51,6 +51,12 @@ class SongsController < ApplicationController
         @song = artist.songs.find_by(id: params[:id])
         redirect_to artist_songs_path(artist) if @song.nil?
       end
+      
+      if !@song.nil?
+        if @song.artist.nil?
+          @path = "nested"
+        end
+      end
     else 
       @song = Song.find(params[:id])
     end

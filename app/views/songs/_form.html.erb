@@ -1,5 +1,4 @@
 <%= form_for @song  do |f| %>
-  <%= binding.pry  %>
   <%= artist_select(@song, @path) %><br>
   <%= f.label :title %>
   <%= f.text_field :title %><br>
